@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     AuthGuard,
@@ -47,4 +49,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
       provide: HTTP_INTERCEPTORS,
       useClass:AuthInterceptor,
       multi:true
- 
+    },
+    UserService
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
